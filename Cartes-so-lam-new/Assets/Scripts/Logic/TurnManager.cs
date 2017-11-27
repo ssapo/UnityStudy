@@ -76,8 +76,12 @@ public class TurnManager : MonoBehaviour
 		}
 
 		var s = DOTween.Sequence();
-		s.Append(Player.Players[0].PArea.Portrait.transform.DOMove(Player.Players[0].PArea.PortraitPosition.position, 0.6f).SetEase(Ease.InQuad));
-		s.Insert(0f, Player.Players[1].PArea.Portrait.transform.DOMove(Player.Players[1].PArea.PortraitPosition.position, 0.6f).SetEase(Ease.InQuad));
+		s.Append(Player.Players[0].PArea.Portrait.transform.DOMoveX(Player.Players[0].PArea.PortraitPosition.position.x, 0.6f).SetRelative(false).SetEase(Ease.InQuad, 1.07f));
+		s.Join(Player.Players[0].PArea.Portrait.transform.DOMoveY(Player.Players[0].PArea.PortraitPosition.position.y, 0.6f).SetRelative(false).SetEase(Ease.OutQuad, 1.07f));
+		s.Join(Player.Players[0].PArea.Portrait.transform.DOMoveZ(Player.Players[0].PArea.PortraitPosition.position.z, 0.6f).SetRelative(false).SetEase(Ease.InQuad, 1.07f));
+		s.Join(Player.Players[1].PArea.Portrait.transform.DOMoveX(Player.Players[1].PArea.PortraitPosition.position.x, 0.6f).SetRelative(false).SetEase(Ease.InQuad, 1.07f));
+		s.Join(Player.Players[1].PArea.Portrait.transform.DOMoveY(Player.Players[1].PArea.PortraitPosition.position.y, 0.6f).SetRelative(false).SetEase(Ease.OutQuad, 1.07f));
+		s.Join(Player.Players[1].PArea.Portrait.transform.DOMoveZ(Player.Players[1].PArea.PortraitPosition.position.z, 0.6f).SetRelative(false).SetEase(Ease.InQuad, 1.07f));
 		s.PrependInterval(1.5f);
 		s.OnComplete(() =>
 			{

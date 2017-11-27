@@ -64,7 +64,7 @@ public class HandVisual : MonoBehaviour
 	// MANAGING CARDS AND SLOTS
 
 	// move Slots GameObject according to the number of cards in hand
-	void UpdatePlacementOfSlots()
+	private void UpdatePlacementOfSlots()
 	{
 		float posX;
 		if (CardsInHand.Count > 0)
@@ -81,7 +81,7 @@ public class HandVisual : MonoBehaviour
 	}
 
 	// shift all cards to their new slots
-	void PlaceCardsOnNewSlots()
+	private void PlaceCardsOnNewSlots()
 	{
 		foreach (var g in CardsInHand)
 		{
@@ -103,7 +103,7 @@ public class HandVisual : MonoBehaviour
 	// CARD DRAW METHODS
 
 	// creates a card and returns a new card as a GameObject
-	GameObject CreateACardAtPosition(CardAsset c, Vector3 position, Vector3 eulerAngles)
+	private GameObject CreateACardAtPosition(CardAsset c, Vector3 position, Vector3 eulerAngles)
 	{
 		// Instantiate a card depending on its type
 		GameObject card;
@@ -201,7 +201,7 @@ public class HandVisual : MonoBehaviour
 	}
 
 	// this method will be called when the card arrived to hand 
-	void ChangeLastCardStatusToInHand(GameObject card, WhereIsTheCardOrCreature w)
+	private void ChangeLastCardStatusToInHand(GameObject card, WhereIsTheCardOrCreature w)
 	{
 		//Debug.Log("Changing state to Hand for card: " + card.gameObject.name);
 		if (owner == AreaPosition.Low)

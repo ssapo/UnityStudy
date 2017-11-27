@@ -15,6 +15,6 @@ public class DelayCommand : Command
 	{
 		var s = DOTween.Sequence();
 		s.PrependInterval(delay);
-		s.OnComplete(Command.CommandExecutionComplete);
+		s.OnComplete(CommandExecutionComplete);
 	}
 }
