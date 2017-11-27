@@ -7,7 +7,7 @@ public class PlayerTurnMaker : TurnMaker
 	{
 		base.OnTurnStart();
 		// dispay a message that it is player`s turn
-		new ShowMessageCommand("C'est votre tour !", 2.0f).AddToQueue();
+		new ShowMessageCommand("Your turn!", 2.0f).AddToQueue();
 		p.DrawACard();
 	}
 }

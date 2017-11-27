@@ -2,34 +2,34 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class MessageManager : MonoBehaviour 
+public class MessageManager : MonoBehaviour
 {
-    public Text MessageText;
-    public GameObject MessagePanel;
+	public Text MessageText;
+	public GameObject MessagePanel;
 
-    public static MessageManager Instance;
+	public static MessageManager Instance;
 
-    void Awake()
-    {
-        Instance = this;
-        MessagePanel.SetActive(false);
-    }
+	void Awake()
+	{
+		Instance = this;
+		MessagePanel.SetActive(false);
+	}
 
-    public void ShowMessage(string Message, float Duration)
-    {
-        StartCoroutine(ShowMessageCoroutine(Message, Duration));
-    }
+	public void ShowMessage(string Message, float Duration)
+	{
+		StartCoroutine(ShowMessageCoroutine(Message, Duration));
+	}
 
-    IEnumerator ShowMessageCoroutine(string Message, float Duration)
-    {
-        Debug.Log("Showing some message. Duration: " + Duration);
+	IEnumerator ShowMessageCoroutine(string Message, float Duration)
+	{
+		Debug.Log("Showing some message. Duration: " + Duration);
 
-        MessageText.text = Message;
-        MessagePanel.SetActive(true);
+		MessageText.text = Message;
+		MessagePanel.SetActive(true);
 
-        yield return new WaitForSeconds(Duration);
+		yield return new WaitForSeconds(Duration);
 
-        MessagePanel.SetActive(false);
-        Command.CommandExecutionComplete();
-    }
+		MessagePanel.SetActive(false);
+		Command.CommandExecutionComplete();
+	}
 }

@@ -9,7 +9,7 @@ public class AITurnMaker : TurnMaker
 	{
 		base.OnTurnStart();
 		// dispay a message that it is enemy`s turn
-		new ShowMessageCommand("Tour de l'ennemi !", 2.0f).AddToQueue();
+		new ShowMessageCommand("Enemy turn!", 2.0f).AddToQueue();
 		p.DrawACard();
 		StartCoroutine(MakeAITurn());
 	}

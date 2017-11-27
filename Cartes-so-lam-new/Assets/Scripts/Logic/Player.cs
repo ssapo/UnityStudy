@@ -62,9 +62,9 @@ public class Player : MonoBehaviour, ICharacter
 			{
 				manaThisTurn = 0;
 			}
-			else if (value > PArea.ManaBar.Crystals.Length)
+			else if (value > PArea.ManaBar.m_maxCrystals)
 			{
-				manaThisTurn = PArea.ManaBar.Crystals.Length;
+				manaThisTurn = PArea.ManaBar.m_maxCrystals;
 			}
 			else
 			{
@@ -88,9 +88,9 @@ public class Player : MonoBehaviour, ICharacter
 			{
 				manaLeft = 0;
 			}
-			else if (value > PArea.ManaBar.Crystals.Length)
+			else if (value > PArea.ManaBar.m_maxCrystals)
 			{
-				manaLeft = PArea.ManaBar.Crystals.Length;
+				manaLeft = PArea.ManaBar.m_maxCrystals;
 			}
 			else
 			{
@@ -253,7 +253,6 @@ public class Player : MonoBehaviour, ICharacter
 			// target is a creature
 			PlayASpellFromHand(CardLogic.CardsCreatedThisGame[SpellCardUniqueID], CreatureLogic.CreaturesCreatedThisGame[TargetUniqueID]);
 		}
-
 	}
 
 	// 2nd overload - takes CardLogic and ICharacter interface - 
